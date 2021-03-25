@@ -32,6 +32,14 @@ jobs:
          CHKP_CLOUDGUARD_SECRET: ${{ secrets.CHKP_CLOUDGUARD_SECRET }}
         run: echo $CHKP_CLOUDGUARD_SECRET
 
+      # Run Shiftleft Iac-Scan
+        - name: Run iac-scan
+          run: |
+            git clone https://github.com/chkp-rolandop/devsecops-training-shiftleft
+            chmod +x ./shiftleft
+            ./shiftleft iac-assessment p ./terraform r-64
+        
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
