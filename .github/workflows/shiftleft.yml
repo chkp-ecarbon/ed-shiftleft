@@ -38,11 +38,10 @@ jobs:
          CHKP_CLOUDGUARD_ID: ${{ secrets.CHKP_CLOUDGUARD_ID }}
          CHKP_CLOUDGUARD_SECRET: ${{ secrets.CHKP_CLOUDGUARD_SECRET }}
         run: |
-          git clone https://github.com/chkp-ecarbon/demo-app
+          git clone https://github.com/chkp-rolandop/devsecops-training-shiftleft.git
           chmod +x ./shiftleft
-          ./shiftleft iac-assessment -r -64 -p ./demo-app/terraform-template
+          ./shiftleft iac-assessment -r -64 -p ./devsecops-training-shiftleft/terraform
         
-
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
