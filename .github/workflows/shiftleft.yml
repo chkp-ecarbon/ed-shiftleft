@@ -38,8 +38,10 @@ jobs:
          CHKP_CLOUDGUARD_ID: ${{ secrets.CHKP_CLOUDGUARD_ID }}
          CHKP_CLOUDGUARD_SECRET: ${{ secrets.CHKP_CLOUDGUARD_SECRET }}
         run: |
-          git clone https://github.com/chkp-rolandop/devsecops-training-shiftleft.git
+          docker:
+            - image: checkpoint/shiftleft:latest
           chmod +x ./shiftleft
+          git clone https://github.com/chkp-rolandop/devsecops-training-shiftleft.git
           ./shiftleft iac-assessment -r -64 -p ./devsecops-training-shiftleft/terraform
         
       # Runs a single command using the runners shell
