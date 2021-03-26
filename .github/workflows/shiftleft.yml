@@ -30,9 +30,9 @@ jobs:
         env:
          CHKP_CLOUDGUARD_ID: ${{ secrets.CHKP_CLOUDGUARD_ID }}
          CHKP_CLOUDGUARD_SECRET: ${{ secrets.CHKP_CLOUDGUARD_SECRET }}
-        run: |  
-          git clone https://github.com/chkp-ecarbon/demo-app.git
+        run: | 
           chmod +x ./shiftleft
+          git clone https://github.com/chkp-ecarbon/demo-app.git
           ./shiftleft iac-assessment -r -64 -p ./terraform
         
     
